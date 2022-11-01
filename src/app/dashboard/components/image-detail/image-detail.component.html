@@ -1,0 +1,16 @@
+<div class="details" *ngIf="image | async as imageData">
+  <button class="button-31" role="button" (click)="openDialog()">ADD TO ALBUM</button>
+  <div class="image-details-container">
+    <div class="image-details">
+      <img class="image" src="{{imageData.download_url}}" alt="{{imageData.author}}">
+
+      <div class="image-info">
+        <h2>UPLOADED BY</h2>
+        <h1>{{imageData.author}}</h1>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>

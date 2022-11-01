@@ -40,6 +40,10 @@ module: {
           'style-loader', 'css-loader', 'sass-loader'
       ]
   },
+  {
+    test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
+    use: 'file-loader'
+  }
   ]
 },
 }

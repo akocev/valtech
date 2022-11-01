@@ -1,0 +1,54 @@
+.details {
+  margin: 50px 340px;
+}
+.image-details-container {
+  display: flex;
+  justify-content: center;
+  padding: 100px 0;
+
+  .image {
+    display: block;
+    height: 420px;
+    cursor: pointer;
+  }
+
+  .image-info {
+    text-align: center;;
+  }
+}
+
+.button-31 {
+  background-color: white;
+  border-style: none;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  max-width: none;
+  min-width: 10px;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+  border: 4px solid;
+  width: 175px;
+  height: 40px;
+  font-weight: bold;
+}
+
+.button-31:hover,
+.button-31:focus {
+  background-color: black;
+  color: white;
+}
+

@@ -1,0 +1,15 @@
+<div class="dashboard">
+  <div class="image-container" *ngFor="let image of images | async">
+      <img class="image" src="{{image.download_url}}" alt="{{image.author}}" [routerLink]="['details', image.id]">
+    <div class="overlay">
+      <div class="text" (click)="openDialog(image)">ADD TO ALBUM</div>
+    </div>
+  </div>
+</div>
+
+<div>
+  <vs-album></vs-album>
+</div>
+
+
+
