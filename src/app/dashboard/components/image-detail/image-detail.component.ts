@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AlbumModalComponent } from 'src/app/albums/components/album-modal/album-modal.component';
 import { addToAlbum } from 'src/app/albums/state/albums.actions';
+import { getAlbums } from 'src/app/albums/state/albums.selector';
 import { Album } from 'src/app/models/album.model';
 import { Image } from 'src/app/models/image.model';
 import { AppState } from 'src/app/store/app.state';
@@ -17,10 +18,12 @@ import { getImageById } from '../../state/dashboard.selector';
 export class ImageDetailComponent implements OnInit {
 
   image: Observable<Image | null> = {} as any;
+  albums: Observable<Album[]> = [] as any;
   constructor(private store: Store<AppState>, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.image = this.store.select(getImageById);
+    this.albums = this.store.select(getAlbums);
   }
 
   addToAlbum(image: Image, title: string) {

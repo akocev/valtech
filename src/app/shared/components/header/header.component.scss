@@ -1,0 +1,22 @@
+.header {
+  display: flex;
+  padding: 14px;
+  background: black;
+  color: white;
+  font-size: 28px;
+  font-weight: 500;
+
+  .title {
+    justify-content: center;
+    margin-left:auto;
+  }
+
+  .button {
+    margin-left:auto;
+  }
+}
+
+.body {
+  font-family: sans-serif;
+  margin: 0;
+}

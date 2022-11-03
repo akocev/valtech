@@ -1,0 +1,8 @@
+<div class="dropdown">
+  <button class="button" (click)="displayAlbumsList()">MY ALBUMS</button>
+  <div *ngIf="albumsListDisplayed" class="content">
+    <div *ngFor="let album of albums | async">
+      <a class="link" href="#">{{album.title}}</a>
+      </div>
+  </div>
+</div>

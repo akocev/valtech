@@ -1,0 +1,8 @@
+<div>
+  <div *ngFor="let album of albums | async">
+    <h1>{{album.title}}</h1>
+    <div *ngFor="let image of album.images">
+      <img class="image" src="{{image.download_url}}" alt="{{image.author}}" [routerLink]="['details', image.id]">
+    </div>
+  </div>
+</div>

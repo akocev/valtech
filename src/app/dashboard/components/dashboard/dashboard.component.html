@@ -2,14 +2,8 @@
   <div class="image-container" *ngFor="let image of images | async">
       <img class="image" src="{{image.download_url}}" alt="{{image.author}}" [routerLink]="['details', image.id]">
     <div class="overlay">
-      <div class="text" (click)="openDialog(image)">ADD TO ALBUM</div>
+      <span class="text" (click)="openDialog(image)">ADD TO ALBUM</span>
     </div>
   </div>
 </div>
-
-<div>
-  <vs-album></vs-album>
-</div>
-
-
 

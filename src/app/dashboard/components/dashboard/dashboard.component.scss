@@ -3,7 +3,7 @@
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
-  margin: 0 200px;
+  margin: 30px 200px;
   justify-content: center;
 
   .image {
@@ -36,7 +36,8 @@
 
   .text {
     color: white;
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: 600;
     position: absolute;
     top: 50%;
     left: 50%;

@@ -11,7 +11,7 @@ import { appReducer } from './store/app.state';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
-import { AlbumComponent } from './albums/components/album/album.component';
+import { AlbumsListComponent } from './albums/components/albums-list/albums-list.component';
 import { DashboardService } from './services/dashboard.service';
 import { EffectsModule } from '@ngrx/effects';
 import { DashboardEffects } from './dashboard/state/dashboard.effects';
@@ -24,15 +24,19 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { AlbumModalComponent } from './albums/components/album-modal/album-modal.component';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { AlbumDetailsComponent } from './albums/components/album-details/album-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     HomeComponent,
-    AlbumComponent,
+    AlbumsListComponent,
     ImageDetailComponent,
-    AlbumModalComponent
+    AlbumModalComponent,
+    AlbumDetailsComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -6,10 +6,11 @@ import { Album } from '../../../models/album.model';
 import { getAlbums } from '../../state/albums.selector';
 
 @Component({
-  selector: 'vs-album',
-  templateUrl: './album.component.html',
+  selector: 'vs-album-details',
+  templateUrl: './album-details.component.html',
+  styleUrls: ['./album-details.component.scss']
 })
-export class AlbumComponent implements OnInit {
+export class AlbumDetailsComponent implements OnInit {
 
   albums: Observable<Album[]> = [] as any;
 
