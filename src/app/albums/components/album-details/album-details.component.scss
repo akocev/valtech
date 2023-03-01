@@ -1,0 +1,58 @@
+@import '../../../shared/style/sizes';
+@import '../../../shared/mixins/typography';
+
+.album {
+  margin: 0 auto;
+}
+
+.images {
+  display: flex;
+  gap:$baseline-4;
+  flex-wrap: wrap;
+  margin: $baseline-6 502px;
+  width: 668px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.image {
+  display: block;
+  height: 200px;
+  width: 200px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: $baseline-2;
+  padding: $baseline-5 0;
+}
+
+.button {
+  @include typo-display-1;
+  padding: $baseline - 2 $baseline-3;
+  border: 2px solid;
+  border: 2px solid;
+  border-color: black;
+  cursor: pointer;
+
+  &--white {
+    background-color: white;
+    color: black;
+  }
+
+  &--black {
+    background-color: black;
+    color: white;
+  }
+}
+
+.button--white:hover,
+.button--white:focus {
+  background-color: black;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+}

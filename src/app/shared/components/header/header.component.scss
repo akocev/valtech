@@ -1,14 +1,16 @@
+@import '../../style/sizes';
+
 .header {
   display: flex;
-  padding: 14px;
+  padding: $baseline $baseline-3;
   background: black;
   color: white;
   font-size: 28px;
   font-weight: 500;
 
   .title {
-    justify-content: center;
-    margin-left:auto;
+    // justify-content: center;
+    // margin-left:auto;
   }
 
   .button {

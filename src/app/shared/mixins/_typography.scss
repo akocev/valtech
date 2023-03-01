@@ -1,0 +1,38 @@
+@import '../style/_typography';
+
+@mixin font-sans {
+  font-family: $font-family-sans;
+}
+
+@mixin font-serif {
+  font-family: $font-family-serif;
+}
+
+// -------------------------
+
+@mixin font-light {
+  font-weight: $font-weight-light;
+}
+
+@mixin font-semi-light {
+  font-weight: $font-weight-semi-light;
+}
+
+@mixin font-plain {
+  font-weight: $font-weight-plain;
+}
+
+@mixin font-semi-bold {
+  font-weight: $font-weight-semi-bold;
+}
+
+@mixin font-bold {
+  font-weight: $font-weight-bold;
+}
+
+@mixin typo-display-1 {
+  font-weight: $font-weight-bold;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: -0.2px;
+}

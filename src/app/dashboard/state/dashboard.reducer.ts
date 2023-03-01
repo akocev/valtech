@@ -5,7 +5,6 @@ import { DashboardState, initialState } from './dashboard.state';
 
 const _dashboardReducer = createReducer(initialState,
 on(getImagesSuccess, (state, action) => {
-  console.log(action.images, 'from actions');
   return {
     ...state,
     images: action.images

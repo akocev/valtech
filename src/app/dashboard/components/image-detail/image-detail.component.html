@@ -1,12 +1,18 @@
-<div class="details" *ngIf="image | async as imageData">
-  <button class="button-31" role="button" (click)="openDialog()">ADD TO ALBUM</button>
-  <div class="image-details-container">
-    <div class="image-details">
-      <img class="image" src="{{imageData.download_url}}" alt="{{imageData.author}}">
+<div class="details-container" *ngIf="image | async as imageData">
+  <div class="actions">
+    <button class="button button--white" role="button" (click)="openDialog()">ADD TO ALBUM +</button>
+    <button class="button button--black" role="button" (click)="openDialog()">DOWNLOAD</button>
+  </div>
 
-      <div class="image-info">
-        <h2>UPLOADED BY</h2>
-        <h1>{{imageData.author}}</h1>
+  <div class="image-details">
+    <div class="details">
+      <img class="image" src="{{imageData.download_url}}" alt="{{imageData.author}}">
+      <div class="info">
+        <h5>UPLOADED BY</h5>
+        <h2>{{imageData.author}}</h2>
+      </div>
+      <div class="actions">
+        <button class="button button--white" role="button">GO BACK</button>
       </div>
 
     </div>

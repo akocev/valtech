@@ -30,8 +30,7 @@ export class DashboardComponent implements OnInit {
   addToAlbum(image: Image, title: string) {
     let album = {} as Album;
     album.title = title;
-    album.images = [image];
-    this.store.dispatch(addToAlbum({album}));
+    this.store.dispatch(addToAlbum({album, image}));
   }
 
   openDialog(image: Image): void {

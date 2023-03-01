@@ -2,7 +2,7 @@
   <button class="button" (click)="displayAlbumsList()">MY ALBUMS</button>
   <div *ngIf="albumsListDisplayed" class="content">
     <div *ngFor="let album of albums | async">
-      <a class="link" href="#">{{album.title}}</a>
+      <a class="link" [routerLink]="['album', album.id]">{{album.title}}</a>
       </div>
   </div>
 </div>

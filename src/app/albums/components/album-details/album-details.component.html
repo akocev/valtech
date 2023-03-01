@@ -1,8 +1,12 @@
-<div>
-  <div *ngFor="let album of albums | async">
-    <h1>{{album.title}}</h1>
-    <div *ngFor="let image of album.images">
-      <img class="image" src="{{image.download_url}}" alt="{{image.author}}" [routerLink]="['details', image.id]">
+<div class="album" *ngIf="album | async as albumData">
+    <h1>{{albumData.title}}</h1>
+    <div class="images">
+      <div *ngFor="let image of albumData.images">
+        <img class="image" src="{{image.download_url}}" alt="{{image.author}}" [routerLink]="['details', image.id]">
+      </div>
     </div>
+  <div class="actions">
+    <button class="button button--white" role="button">GO BACK</button>
+    <button class="button button--black" role="button">SAVE</button>
   </div>
 </div>
