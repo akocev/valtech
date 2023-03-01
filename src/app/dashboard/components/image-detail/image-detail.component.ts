@@ -9,6 +9,7 @@ import { Album } from 'src/app/models/album.model';
 import { Image } from 'src/app/models/image.model';
 import { AppState } from 'src/app/store/app.state';
 import { getImageById } from '../../state/dashboard.selector';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'vs-image-detail',
@@ -19,7 +20,7 @@ export class ImageDetailComponent implements OnInit {
 
   image: Observable<Image | null> = {} as any;
   albums: Observable<Album[]> = [] as any;
-  constructor(private store: Store<AppState>, public dialog: MatDialog) {}
+  constructor(private store: Store<AppState>, public dialog: MatDialog, private location: Location) {}
 
   ngOnInit(): void {
     this.image = this.store.select(getImageById);
@@ -45,5 +46,9 @@ export class ImageDetailComponent implements OnInit {
         })
       }
     });
+  }
+
+  navigateBack(): void {
+    this.location.back();
   }
 }

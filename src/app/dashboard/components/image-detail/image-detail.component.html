@@ -1,7 +1,7 @@
 <div class="details-container" *ngIf="image | async as imageData">
   <div class="actions">
     <button class="button button--white" role="button" (click)="openDialog()">ADD TO ALBUM +</button>
-    <button class="button button--black" role="button" (click)="openDialog()">DOWNLOAD</button>
+    <button class="button button--black" role="button">DOWNLOAD</button>
   </div>
 
   <div class="image-details">
@@ -12,7 +12,7 @@
         <h2>{{imageData.author}}</h2>
       </div>
       <div class="actions">
-        <button class="button button--white" role="button">GO BACK</button>
+        <button class="button button--white" role="button" (click)="  navigateBack()">GO BACK</button>
       </div>
 
     </div>
