@@ -5,6 +5,7 @@ import { AppState } from '../../../store/app.state';
 import { Album } from '../../../models/album.model';
 import { getAlbumById, getAlbums } from '../../state/albums.selector';
 import { Location } from '@angular/common';
+import { StoreFacadeService } from 'src/app/store/store-facade.service';
 
 @Component({
   selector: 'vs-album-details',
@@ -15,10 +16,10 @@ export class AlbumDetailsComponent implements OnInit {
 
   album: Observable<Album | undefined> = [] as any;
 
-  constructor(private store: Store<AppState>, private location: Location) {}
+  constructor(private storeFacade: StoreFacadeService, private location: Location) {}
 
   ngOnInit(): void {
-    this.album = this.store.select(getAlbumById);
+    this.album = this.storeFacade.dashboard.getSelectedAlbum$;
   }
 
   navigateBack(): void {

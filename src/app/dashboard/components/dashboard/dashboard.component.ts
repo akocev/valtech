@@ -10,6 +10,7 @@ import { Album } from '../../../models/album.model';
 import { getAlbums } from '../../../albums/state/albums.selector';
 import { AlbumModalComponent } from 'src/app/albums/components/album-modal/album-modal.component';
 import { MatDialog } from '@angular/material/dialog';
+import { StoreFacadeService } from 'src/app/store/store-facade.service';
 
 @Component({
   selector: 'vs-dashboard',
@@ -20,16 +21,16 @@ export class DashboardComponent implements OnInit {
 
   images: Observable<Image[]> = [] as any;
 
-  constructor(private store: Store<AppState>, public dialog: MatDialog) {}
+  constructor(private storeFacade: StoreFacadeService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
-    this.store.dispatch(getImages());
-    this.images = this.store.select(getDashboard);
+    this.storeFacade.dashboard.getImages();
+    this.images = this.storeFacade.dashboard.loadImages$;
   }
 
   addToAlbum(image: Image, title: string) {
     let album = {title: title} as Album;
-    this.store.dispatch(addToAlbum({album, image}));
+    this.storeFacade.dashboard.addImageToAlbum(album, image);
   }
 
   openDialog(image: Image): void {
