@@ -16,3 +16,7 @@ export const getAlbumById = createSelector(getAlbums, getCurrentRoute, (albums, 
   return undefined;
 });
 
+export const getShowAlbumsDropdownButton = createSelector(getAlbums, (albums) => {
+  return albums.length > 0;
+});
+

@@ -7,7 +7,6 @@ const _albumsReducer = createReducer(initialState,
   let album = {...action.album};
   let image = action.image;
 
-  console.log('on add to album', state, action);
   const existingAlbum = state.albums.find(res => res.title === album.title);
   if (!existingAlbum) {
     album.id = (state.albums.length + 1).toString();

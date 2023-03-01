@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from '../../../store/app.state';
 import { Album } from '../../../models/album.model';
-import { getAlbums } from '../../state/albums.selector';
+import { getAlbums, getShowAlbumsDropdownButton } from '../../state/albums.selector';
 
 @Component({
   selector: 'vs-albums-list',
@@ -23,5 +23,9 @@ export class AlbumsListComponent implements OnInit{
 
   displayAlbumsList() {
     this.albumsListDisplayed = !this.albumsListDisplayed;
+  }
+
+  get showAlbumsDropdownButton(): Observable<boolean> {
+    return this.store.select(getShowAlbumsDropdownButton);
   }
 }

@@ -16,27 +16,13 @@ export class DashboardService {
     .pipe(
       map((data) => {
         const images: Image[] = [];
-
-        let imgCounter = 0;
         for(let image of data) {
-          if (imgCounter === 3) {
-            imgCounter = 0;
-          }
           let res = image.download_url.split('id/');
-          // if (imgCounter === 0 || imgCounter === 2) {
-          //   res[1] = res[1].substring(0, 1) + '/400'
-          // }
-
-          // if (imgCounter === 1) {
-          //   res[1] = res[1].substring(0, 1) + '/400'
-          // }
-
           res[1] = res[1].substring(0, 1) + '/400'
           const url = res[0] + 'id/' + res[1];
           image.download_url = url;
 
           images.push(image);
-          imgCounter ++;
         }
         return images;
       })

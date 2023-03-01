@@ -28,14 +28,13 @@ export class DashboardComponent implements OnInit {
   }
 
   addToAlbum(image: Image, title: string) {
-    let album = {} as Album;
-    album.title = title;
+    let album = {title: title} as Album;
     this.store.dispatch(addToAlbum({album, image}));
   }
 
   openDialog(image: Image): void {
     const dialogRef = this.dialog.open(AlbumModalComponent, {
-      data: { title: 'My Album One'}
+      data: { title: ''}
     });
 
     dialogRef.afterClosed().subscribe(result => {

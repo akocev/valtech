@@ -1,7 +1,7 @@
-import { state } from '@angular/animations';
+
 import { createReducer, on } from '@ngrx/store';
-import { getImages, getImagesSuccess } from './dashboard.actions';
-import { DashboardState, initialState } from './dashboard.state';
+import { getImagesSuccess } from './dashboard.actions';
+import { initialState } from './dashboard.state';
 
 const _dashboardReducer = createReducer(initialState,
 on(getImagesSuccess, (state, action) => {
