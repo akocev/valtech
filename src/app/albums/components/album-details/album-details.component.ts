@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { AppState } from '../../../store/app.state';
 import { Album } from '../../../models/album.model';
-import { getAlbumById, getAlbums } from '../../state/albums.selector';
 import { Location } from '@angular/common';
-import { StoreFacadeService } from 'src/app/store/store-facade.service';
+import { StoreFacadeService } from 'app/store/store-facade.service';
 
 @Component({
   selector: 'vs-album-details',

@@ -1,4 +1,4 @@
-import { Image } from 'src/app/models/image.model';
+import { Image } from 'app/models/image.model';
 
 export interface DashboardState {
   images: Image []

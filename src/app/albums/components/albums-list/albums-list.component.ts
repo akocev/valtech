@@ -3,8 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AppState } from '../../../store/app.state';
 import { Album } from '../../../models/album.model';
-import { getAlbums, getShowAlbumsDropdownButton } from '../../state/albums.selector';
-import { StoreFacadeService } from 'src/app/store/store-facade.service';
+import { StoreFacadeService } from 'app/store/store-facade.service';
 
 @Component({
   selector: 'vs-albums-list',

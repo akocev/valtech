@@ -1,8 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { environment } from 'src/environments/environment';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +24,7 @@ import { MatInputModule } from '@angular/material/input';
 import { AlbumModalComponent } from './albums/components/album-modal/album-modal.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { AlbumDetailsComponent } from './albums/components/album-details/album-details.component';
+import { StoreFacadeService } from './store/store-facade.service';
 
 @NgModule({
   declarations: [
@@ -48,9 +47,6 @@ import { AlbumDetailsComponent } from './albums/components/album-details/album-d
     MatInputModule,
     MatDialogModule,
     StoreModule.forRoot(appReducer),
-    StoreDevtoolsModule.instrument({
-      logOnly: environment.production,
-    }),
     EffectsModule.forRoot([]),
     EffectsModule.forFeature([DashboardEffects]),
     BrowserAnimationsModule,
@@ -59,7 +55,7 @@ import { AlbumDetailsComponent } from './albums/components/album-details/album-d
       serializer: CustomSerializer,
     }),
   ],
-  providers: [DashboardService, {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
+  providers: [DashboardService, {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}, StoreFacadeService],
   bootstrap: [AppComponent],
   exports: [
     MatFormFieldModule,

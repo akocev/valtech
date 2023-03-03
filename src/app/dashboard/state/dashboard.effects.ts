@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { DashboardService } from 'src/app/services/dashboard.service';
-import { AppState } from 'src/app/store/app.state';
 import { dummyAction, getImages, getImagesSuccess } from './dashboard.actions';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import {
@@ -18,6 +16,8 @@ import {
   routerNavigationAction,
   ROUTER_NAVIGATION,
 } from '@ngrx/router-store';
+import { DashboardService } from 'app/services/dashboard.service';
+import { AppState } from 'app/store/app.state';
 
 @Injectable()
 export class DashboardEffects {

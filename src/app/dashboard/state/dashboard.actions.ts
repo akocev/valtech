@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { Image } from 'src/app/models/image.model';
+import { Image } from 'app/models/image.model';
 
 export const getImages = createAction('getImages');
 

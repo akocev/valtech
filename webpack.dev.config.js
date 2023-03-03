@@ -11,7 +11,7 @@ resolve: {
   extensions: ['.ts', '.js']
 },
 output: {
-  filename: 'bundle.js',
+  filename: '[name].js',
   path: path.join(__dirname, 'src', 'dist')
 },
 module: {
@@ -28,16 +28,11 @@ module: {
       test: /\.html$/,
       use: 'html-loader'
     },
-    {
-      test:  /\.css$/,
-      use: [
-          'style-loader', 'css-loader'
-      ]
-  },
   {
       test:  /\.scss$/,
+      exclude: /node_modules/,
       use: [
-          'style-loader', 'css-loader', 'sass-loader'
+          'style-loader', 'css-loader', 'sass-loader',
       ]
   },
   {
@@ -50,6 +45,7 @@ module: {
 webpackConfig.plugins = [
   new HtmlWebpackPlugin({
     template: './src/index.html',
+    filename: '[name].html'
   })
 ];
 module.exports = webpackConfig;
